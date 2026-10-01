@@ -66,7 +66,7 @@ function Home({go}) {
       <div className="hero-copy">
         <p className="eyebrow"><span/> COLÉGIO RAINHA SANTA ISABEL</p>
         <h1>Uma escola<br/><em>mais nossa.</em></h1>
-        <p className="hero-text">Somos a <strong>Lista Madagascar</strong>. 30 pessoas, muitas ideias e vontade de fazer acontecer.</p>
+        <p className="hero-text">Somos a <strong>Lista Madagascar</strong>. 32 pessoas, muitas ideias e vontade de fazer acontecer.</p>
         <div className="hero-actions"><button className="primary" onClick={() => go("projetos")}>Conhece os projetos <ArrowRight size={18}/></button><button className="ghost" onClick={() => go("lista")}>Conhece a equipa</button></div>
       </div>
       <div className="hero-card">
@@ -77,7 +77,7 @@ function Home({go}) {
       <div className="scroll">SCROLL <span/></div>
     </section>
 
-    <section className="numbers"><div><b>30</b><span>elementos</span></div><div><b>{projects.length}</b><span>projetos</span></div><div><b>12</b><span>meses</span></div><div><b>1</b><span>escola</span></div></section>
+    <section className="numbers"><div><b>32</b><span>elementos</span></div><div><b>{projects.length}</b><span>projetos</span></div><div><b>12</b><span>meses</span></div><div><b>1</b><span>escola</span></div></section>
 
     <section className="intro section">
       <div className="section-label">01 — A NOSSA IDEIA</div>
@@ -86,7 +86,7 @@ function Home({go}) {
 
     <section className="feature section">
       <div className="feature-image"><div className="big-m">M</div><span className="image-caption">LISTA MADAGASCAR · 2026</span></div>
-      <div className="feature-copy"><p className="eyebrow">O QUE NOS MOVE</p><h2>Ideias que saem do papel.</h2><p>Eventos que ficam na memória. Projetos que resolvem problemas reais. E uma equipa que está aqui para ouvir.</p><div className="stats"><div><b>30</b><span>elementos</span></div><div><b>{projects.length}</b><span>projetos</span></div><div><b>12</b><span>meses</span></div></div></div>
+      <div className="feature-copy"><p className="eyebrow">O QUE NOS MOVE</p><h2>Ideias que saem do papel.</h2><p>Eventos que ficam na memória. Projetos que resolvem problemas reais. E uma equipa que está aqui para ouvir.</p><div className="stats"><div><b>32</b><span>elementos</span></div><div><b>{projects.length}</b><span>projetos</span></div><div><b>12</b><span>meses</span></div></div></div>
     </section>
 
     <section className="recurring section"><div className="section-head"><div><div className="section-label">02 — DURANTE O ANO</div><h2>Momentos que<br/><span>se repetem.</span></h2></div></div><div className="recurring-grid">{recurringEvents.map((r,i)=><article className="recurring-card" key={r.title}><div className="rec-icon">{r.icon}</div><small>0{i+1} · {r.frequency}</small><h3>{r.title}</h3><p>{r.text}</p></article>)}</div></section>
@@ -112,9 +112,35 @@ function Events() {
 }
 
 function People() {
+  const groups = [
+    "Direção",
+    "Assembleia Geral",
+    "Comunicação e Cultura",
+    "Conselho Fiscal",
+    "Pastoral",
+    "Eventos",
+    "Desporto",
+    "Voluntariado e Ambiente",
+    "Os Nossos — Vogais"
+  ];
+
+  const groupedPeople = groups.map(group => ({
+    group,
+    members: people.filter(p => {
+      const roleGroup = p.role.split(" · ")[1];
+      if (group === "Os Nossos — Vogais") return roleGroup?.startsWith("11.º") || roleGroup?.startsWith("10.º") || roleGroup?.startsWith("9.º");
+      return roleGroup === group;
+    })
+  }));
+
   return <main className="page">
-    <PageHero eyebrow="04 — A EQUIPA" title={<>30 pessoas.<br/><em>Uma só M.</em></>} text="Somos diferentes, mas temos a mesma vontade: tornar a vida escolar mais participada, divertida e nossa."/>
-    <section className="section people-section"><div className="people-grid">{people.map((p,i)=><article className="person" key={p.name}><div className="person-photo"><span>{p.initials}</span><small>{String(i+1).padStart(2,"0")}</small></div><div className="person-info"><p>{p.role}</p><h3>{p.name}</h3><span>{p.text}</span></div></article>)}</div></section>
+    <PageHero eyebrow="04 — A EQUIPA" title={<>32 pessoas.<br/><em>Uma só M.</em></>} text="Somos diferentes, mas temos a mesma vontade: tornar a vida escolar mais participada, divertida e nossa."/>
+    <section className="section people-section">
+      {groupedPeople.map(({group, members}) => <div className="people-group" key={group}>
+        <div className="section-label">{group}</div>
+        <div className="people-grid">{members.map((p,i)=><article className="person" key={p.name}><div className="person-photo"><span>{p.initials}</span><small>{String(i+1).padStart(2,"0")}</small></div><div className="person-info"><p>{p.role.split(" · ")[0]}</p><h3>{p.name}</h3><span>{p.text}</span></div></article>)}</div>
+      </div>)}
+    </section>
     <section className="values section"><div className="section-label">O QUE NOS DEFINE</div><div className="values-grid"><Value icon={<Users/>} title="Participação" text="Toda a gente tem uma ideia que merece ser ouvida."/><Value icon={<Trophy/>} title="Ambição" text="Não prometemos pouco. Prometemos trabalhar."/><Value icon={<Heart/>} title="Comunidade" text="Uma escola mais próxima, inclusiva e viva."/><Value icon={<Leaf/>} title="Futuro" text="Pensar hoje na escola que queremos amanhã."/></div></section>
   </main>
 }
