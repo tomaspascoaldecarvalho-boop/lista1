@@ -52,7 +52,7 @@ function App() {
           <button onClick={() => go("projetos")}>Projetos</button>
           <button onClick={() => go("manifesto")}>Manifesto</button>
         </div>
-        <div className="footer-social"><a href="https://instagram.com" target="_blank" rel="noreferrer"><Instagram size={19}/></a><a href="mailto:listamadagascar@crsi.pt"><Mail size={19}/></a></div>
+        <div className="footer-social"><a href="https://www.instagram.com/listamadagascar.crsi/" target="_blank" rel="noreferrer"><Instagram size={19}/></a><a href="mailto:listamadagascar@crsi.pt"><Mail size={19}/></a></div>
         <div className="copyright">© 2026 Lista Madagascar · Colégio Rainha Santa Isabel</div>
       </footer>
     </div>
