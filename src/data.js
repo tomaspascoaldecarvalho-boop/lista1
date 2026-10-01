@@ -34,24 +34,342 @@ export const people = [
 ];
 
 export const projects = [
-  { title: "Sunsets Mensais", category: "Eventos", icon: "☀", description: "Um sunset por mês com música, amigos e um ambiente diferente para toda a escola.", tag: "Todos os meses" },
-  { title: "Conferências M", category: "Cultura", icon: "◉", description: "Conferências e conversas ao longo do ano com convidados ligados a temas que interessam aos alunos.", tag: "Ao longo do ano" },
-  { title: "Palestras Mensais", category: "Cultura", icon: "✦", description: "Uma conversa por mês sobre empreendedorismo, tecnologia, carreira, desporto, criatividade ou outros temas.", tag: "Todos os meses" },
-  { title: "Semana Madagascar", category: "Eventos", icon: "M", description: "Uma semana especial com desafios, música, torneios, atividades e surpresas espalhadas pela escola.", tag: "Grande evento" },
-  { title: "Torneios Interturmas", category: "Desporto", icon: "🏆", description: "Futebol, basquetebol, voleibol, padel, ténis de mesa e outras competições escolhidas pelos alunos.", tag: "Ao longo do ano" },
-  { title: "Noite de Talentos", category: "Cultura", icon: "♪", description: "Um palco aberto para música, dança, teatro, humor e todos os talentos dos alunos.", tag: "Planeado" },
-  { title: "Cinema na Escola", category: "Cultura", icon: "▣", description: "Sessões de cinema escolhidas pelos alunos, com ambiente de noite de cinema e convívio.", tag: "Planeado" },
-  { title: "Gaming Tournament", category: "Eventos", icon: "⌁", description: "Torneios de EA FC, Mario Kart, Rocket League e outros jogos escolhidos pelos alunos.", tag: "Planeado" },
-  { title: "Caixa M", category: "Escola", icon: "□", description: "Uma caixa física e digital para sugestões anónimas. Porque boas ideias podem vir de qualquer pessoa.", tag: "Sempre aberta" },
-  { title: "Eco Madagascar", category: "Ambiente", icon: "❧", description: "Campanhas para reduzir desperdício, reciclar mais e tornar a escola mais consciente.", tag: "Em desenvolvimento" },
-  { title: "Apoio entre Alunos", category: "Comunidade", icon: "◎", description: "Uma rede de entreajuda para partilhar conhecimentos e apoiar colegas em diferentes disciplinas.", tag: "Planeado" },
-  { title: "Dia da Escola", category: "Comunidade", icon: "◇", description: "Um grande dia para juntar alunos, professores e comunidade num programa feito para todos.", tag: "Grande evento" },
-  { title: "Mural M", category: "Escola", icon: "▤", description: "Um espaço visual para ideias, arte, frases e projetos dos alunos ganharem lugar na escola.", tag: "Planeado" },
-  { title: "Feira de Clubes", category: "Escola", icon: "✚", description: "Uma tarde para descobrir atividades, clubes e projetos e para lançar novas ideias dos alunos.", tag: "Planeado" },
-  { title: "Dia Solidário", category: "Comunidade", icon: "♥", description: "Uma iniciativa anual para apoiar uma causa escolhida pela comunidade escolar.", tag: "Anual" },
-  { title: "Desafio M", category: "Eventos", icon: "!", description: "Pequenos desafios mensais entre turmas para aumentar a participação e o espírito de equipa.", tag: "Mensal" },
-  { title: "Clube de Debate", category: "Cultura", icon: "?", description: "Encontros para discutir temas atuais, treinar argumentação e ouvir opiniões diferentes.", tag: "Planeado" },
-  { title: "Passaporte M", category: "Comunidade", icon: "→", description: "Um sistema de desafios e atividades ao longo do ano para incentivar a participação dos alunos.", tag: "Planeado" }
+  {
+    "title": "Podcast CRSI",
+    "category": "Comunicação e Cultura",
+    "icon": "◉",
+    "description": "O regresso do podcast do CRSI, com professores e alunos à conversa sobre temas diversos.",
+    "tag": "Comunicação"
+  },
+  {
+    "title": "O Próximo Passo",
+    "category": "Comunicação e Cultura",
+    "icon": "→",
+    "description": "Conversas reais com alunos do 12.º ano sobre exames, experiências e escolhas para o futuro.",
+    "tag": "12.º ano"
+  },
+  {
+    "title": "Speed Dating de Cursos",
+    "category": "Comunicação e Cultura",
+    "icon": "↔",
+    "description": "Alunos de diferentes universidades apresentam os seus cursos e respondem às dúvidas de quem está a escolher.",
+    "tag": "Ensino superior"
+  },
+  {
+    "title": "Open Days Universitários",
+    "category": "Comunicação e Cultura",
+    "icon": "◎",
+    "description": "Informação organizada sobre Open Days e oportunidades das universidades em Portugal.",
+    "tag": "Informação"
+  },
+  {
+    "title": "Concursos M",
+    "category": "Comunicação e Cultura",
+    "icon": "✦",
+    "description": "Concursos de cultura geral, talentos, escrita, desenho, fotografia e outras áreas.",
+    "tag": "Ao longo do ano"
+  },
+  {
+    "title": "Concurso de Empreendedorismo",
+    "category": "Comunicação e Cultura",
+    "icon": "↗",
+    "description": "Equipas transformam ideias em projetos reais e apresentam as suas propostas perante um júri.",
+    "tag": "Empreendedorismo"
+  },
+  {
+    "title": "Banco de Manuais",
+    "category": "Comunicação e Cultura",
+    "icon": "▤",
+    "description": "Promoção do Banco de Manuais para facilitar a reutilização e partilha de recursos escolares.",
+    "tag": "Recursos"
+  },
+  {
+    "title": "Banco de Testes",
+    "category": "Comunicação e Cultura",
+    "icon": "□",
+    "description": "Arquivo de testes de anos anteriores para ajudar os alunos na preparação para as avaliações.",
+    "tag": "Secundário"
+  },
+  {
+    "title": "Anuário Escolar",
+    "category": "Comunicação e Cultura",
+    "icon": "▥",
+    "description": "Um registo dos momentos, pessoas e memórias que marcaram o ano letivo.",
+    "tag": "Memórias"
+  },
+  {
+    "title": "Jornal Trimestral",
+    "category": "Comunicação e Cultura",
+    "icon": "▤",
+    "description": "Uma publicação periódica com notícias, opiniões, entrevistas e acontecimentos da comunidade escolar.",
+    "tag": "Trimestral"
+  },
+  {
+    "title": "Campanhas de SBV",
+    "category": "Comunicação e Cultura",
+    "icon": "♥",
+    "description": "Sessões práticas para aprender a reconhecer emergências e agir corretamente perante uma vítima.",
+    "tag": "Formação"
+  },
+  {
+    "title": "Estudar Fora de Portugal",
+    "category": "Comunicação e Cultura",
+    "icon": "◇",
+    "description": "Sessões sobre candidaturas, bolsas, custos, alojamento e percursos no ensino superior internacional.",
+    "tag": "Futuro"
+  },
+  {
+    "title": "Parlamento dos Jovens",
+    "category": "Comunicação e Cultura",
+    "icon": "◌",
+    "description": "Inscrição do CRSI no projeto Parlamento dos Jovens e promoção da participação cívica.",
+    "tag": "Participação"
+  },
+  {
+    "title": "A Tua Voz Também Conta!",
+    "category": "Comunicação e Cultura",
+    "icon": "!",
+    "description": "Formulário mensal para avaliar as iniciativas da Associação de Estudantes e recolher sugestões.",
+    "tag": "Mensal"
+  },
+  {
+    "title": "Porque Devemos Falar de Política?",
+    "category": "Comunicação e Cultura",
+    "icon": "?",
+    "description": "Palestras de literacia política para compreender melhor a informação e combater a desinformação.",
+    "tag": "Literacia"
+  },
+  {
+    "title": "Site / Blog da AE",
+    "category": "Comunicação e Cultura",
+    "icon": "⌁",
+    "description": "Uma plataforma para consultar atividades, eventos, palestras, projetos e novidades da Associação.",
+    "tag": "Online"
+  },
+  {
+    "title": "Moral M",
+    "category": "Comunicação e Cultura",
+    "icon": "M",
+    "description": "Construção ao longo do ano de um espaço de recordações dos momentos vividos pela AE.",
+    "tag": "Memórias"
+  },
+  {
+    "title": "Resumos à Solta",
+    "category": "Comunicação e Cultura",
+    "icon": "✎",
+    "description": "Banco de resumos no Padlet para apoiar os alunos do ensino secundário.",
+    "tag": "Secundário"
+  },
+  {
+    "title": "A Futura AE",
+    "category": "Comunicação e Cultura",
+    "icon": "∞",
+    "description": "Informação e orientação para ajudar futuros alunos a formar uma Lista candidata à AE.",
+    "tag": "Futuras listas"
+  },
+  {
+    "title": "AE Aberta e Próxima",
+    "category": "Comunicação e Cultura",
+    "icon": "◎",
+    "description": "Uma Associação acessível, onde todos os alunos possam ser ouvidos, participar e encontrar apoio.",
+    "tag": "Sempre aberta"
+  },
+  {
+    "title": "Viagens de Finalistas",
+    "category": "Eventos",
+    "icon": "✈",
+    "description": "Viagens de finalistas para o 9.º e 12.º anos.",
+    "tag": "Finalistas"
+  },
+  {
+    "title": "Baile de Finalistas",
+    "category": "Eventos",
+    "icon": "✦",
+    "description": "Baile de finalistas para celebrar o fim de um ciclo no 9.º e 12.º anos.",
+    "tag": "Finalistas"
+  },
+  {
+    "title": "Noite no Colégio",
+    "category": "Eventos",
+    "icon": "☾",
+    "description": "Uma noite especial no Colégio pensada para os alunos finalistas.",
+    "tag": "Finalistas"
+  },
+  {
+    "title": "Semana M",
+    "category": "Eventos",
+    "icon": "M",
+    "description": "Dias temáticos com atividades, desafios e momentos diferentes ao longo de uma semana.",
+    "tag": "Grande evento"
+  },
+  {
+    "title": "Summit Cluny",
+    "category": "Eventos",
+    "icon": "↗",
+    "description": "Continuação do Summit Cluny, dedicado ao empreendedorismo e à inovação.",
+    "tag": "Empreendedorismo"
+  },
+  {
+    "title": "Dia Mundial do Cinema",
+    "category": "Eventos",
+    "icon": "▣",
+    "description": "Celebração do Dia Mundial do Cinema, a 5 de novembro, com cinema ao ar livre no Colégio.",
+    "tag": "5 de novembro"
+  },
+  {
+    "title": "Volta ao Mundo",
+    "category": "Eventos",
+    "icon": "◎",
+    "description": "Um dia dedicado às diferentes culturas, sabores e tradições presentes no mundo.",
+    "tag": "Culturas"
+  },
+  {
+    "title": "Sunsets Mensais",
+    "category": "Eventos",
+    "icon": "☀",
+    "description": "Sunsets mensais da Associação de Estudantes para convívio e angariação de fundos.",
+    "tag": "Mensal"
+  },
+  {
+    "title": "Mega Jantar de Natal",
+    "category": "Eventos",
+    "icon": "✦",
+    "description": "Um grande jantar de Natal organizado pela Associação de Estudantes.",
+    "tag": "Natal"
+  },
+  {
+    "title": "Voluntários Cluny",
+    "category": "Voluntariado e Ambiente",
+    "icon": "♥",
+    "description": "Expandir e promover o projeto Voluntários Cluny, aumentando a divulgação e adesão dos alunos.",
+    "tag": "Voluntariado"
+  },
+  {
+    "title": "Caixa Cor de Rosa",
+    "category": "Voluntariado e Ambiente",
+    "icon": "□",
+    "description": "Uma iniciativa solidária criada para mobilizar a comunidade escolar em torno de uma causa.",
+    "tag": "Solidariedade"
+  },
+  {
+    "title": "Corrida Solidária",
+    "category": "Voluntariado e Ambiente",
+    "icon": "↗",
+    "description": "Corrida organizada pela AE com música, comida e diversão, aliando atividade física e solidariedade.",
+    "tag": "Solidariedade"
+  },
+  {
+    "title": "Armário Solidário",
+    "category": "Voluntariado e Ambiente",
+    "icon": "▤",
+    "description": "Recolha durante todo o ano de material escolar, comida e bens para apoiar instituições.",
+    "tag": "Todo o ano"
+  },
+  {
+    "title": "Parcerias Solidárias",
+    "category": "Voluntariado e Ambiente",
+    "icon": "∞",
+    "description": "Colaboração com a Liga Portuguesa Contra o Cancro, AMI, BACF e outras instituições.",
+    "tag": "Parcerias"
+  },
+  {
+    "title": "Ecopontos no Colégio",
+    "category": "Voluntariado e Ambiente",
+    "icon": "❧",
+    "description": "Instalação de ecopontos no 2.º e 3.º piso para facilitar a separação de resíduos.",
+    "tag": "Ambiente"
+  },
+  {
+    "title": "Ponto de Fé",
+    "category": "Pastoral",
+    "icon": "✦",
+    "description": "Espaço para partilhar, ouvir e descobrir a fé através de conversas sobre arte, fé e cultura com oradores.",
+    "tag": "Fé e cultura"
+  },
+  {
+    "title": "Juntos à Mesa",
+    "category": "Pastoral",
+    "icon": "◇",
+    "description": "Jantar partilhado em roda antes da Hora com Jesus, criando espaço para encontro e comunidade.",
+    "tag": "Comunidade"
+  },
+  {
+    "title": "Coro Estudantil",
+    "category": "Pastoral",
+    "icon": "♪",
+    "description": "Criação e dinamização de um coro formado por alunos.",
+    "tag": "Música"
+  },
+  {
+    "title": "Procissão das Velas",
+    "category": "Pastoral",
+    "icon": "☼",
+    "description": "Participação e dinamização da Procissão das Velas.",
+    "tag": "Pastoral"
+  },
+  {
+    "title": "Vigília de Taizé",
+    "category": "Pastoral",
+    "icon": "☾",
+    "description": "Momentos de oração e encontro inspirados na comunidade de Taizé.",
+    "tag": "Taizé"
+  },
+  {
+    "title": "Viagem a Taizé",
+    "category": "Pastoral",
+    "icon": "✈",
+    "description": "Promoção e divulgação da viagem a Taizé junto dos alunos interessados.",
+    "tag": "Viagem"
+  },
+  {
+    "title": "Exposições do Santíssimo",
+    "category": "Pastoral",
+    "icon": "◉",
+    "description": "Dinamização de momentos de exposição do Santíssimo na capela do Colégio.",
+    "tag": "Capela"
+  },
+  {
+    "title": "Interturmas",
+    "category": "Desporto",
+    "icon": "🏆",
+    "description": "Organização dos interturmas de futebol, voleibol e basquetebol.",
+    "tag": "Interturmas"
+  },
+  {
+    "title": "Interturmas de Dança",
+    "category": "Desporto",
+    "icon": "♪",
+    "description": "Uma competição de dança entre turmas, aberta à criatividade e participação dos alunos.",
+    "tag": "Interturmas"
+  },
+  {
+    "title": "Torneio Interescolas",
+    "category": "Desporto",
+    "icon": "⚡",
+    "description": "Competição desportiva entre escolas para promover espírito de equipa e convívio.",
+    "tag": "Interescolas"
+  },
+  {
+    "title": "Torneio de Padel",
+    "category": "Desporto",
+    "icon": "◇",
+    "description": "Torneio de padel para alunos com diferentes níveis de experiência.",
+    "tag": "Torneio"
+  },
+  {
+    "title": "Mais Material no Recreio",
+    "category": "Desporto",
+    "icon": "●",
+    "description": "Reposição das bolas de futebol e disponibilização de balizas para utilização no recreio.",
+    "tag": "Recreio"
+  },
+  {
+    "title": "Mini-Torneios",
+    "category": "Desporto",
+    "icon": "!",
+    "description": "Mini-torneios durante os intervalos de 25 minutos nas últimas semanas de cada período.",
+    "tag": "Intervalos"
+  }
 ];
 
 export const recurringEvents = [
