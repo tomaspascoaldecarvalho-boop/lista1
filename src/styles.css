@@ -154,3 +154,12 @@ body{background:var(--paper)}
   .manifesto-title{font-size:42px!important}
   .quote p{font-size:38px}
 }
+
+
+/* Slogan — versão sóbria */
+.manifesto-title span:first-child,.manifesto-title span:nth-child(2),.manifesto-title em{color:#12351f}
+.manifesto-title em{font-style:italic}
+.manifesto-title em:after{background:#ff4b0b}
+.quote p span:first-child,.quote p span:nth-child(2){color:#fff}
+.quote p em{color:#12351f;font-style:italic}
+.quote p em:after{background:#f7c52b}
