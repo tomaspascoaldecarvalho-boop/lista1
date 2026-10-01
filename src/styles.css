@@ -135,3 +135,22 @@ body{background:var(--paper)}
 .person-photo{aspect-ratio:auto;height:100%;min-height:230px}
 .person{display:flex;flex-direction:column;height:100%}
 .person-photo{flex:1}
+
+
+/* Slogan — composição editorial */
+.manifesto-title{display:flex;flex-direction:column;gap:2px;margin-bottom:35px!important;line-height:.9!important}
+.manifesto-title span,.manifesto-title em{display:block}
+.manifesto-title span:first-child{color:#12351f}
+.manifesto-title span:nth-child(2){color:#ff4b0b}
+.manifesto-title em{font-style:italic;color:#63258f;position:relative;width:max-content;max-width:100%}
+.manifesto-title em:after{content:"";position:absolute;left:0;right:-8px;bottom:-7px;height:5px;background:#f7c52b;transform:skewX(-12deg)}
+.quote p{display:flex;flex-direction:column;align-items:center;gap:2px}
+.quote p span,.quote p em{display:block}
+.quote p span:first-child{color:#fff}
+.quote p span:nth-child(2){color:#f7c52b}
+.quote p em{font-style:italic;color:#12351f;position:relative}
+.quote p em:after{content:"";position:absolute;left:-8px;right:-8px;bottom:-4px;height:4px;background:#f7c52b;transform:skewX(-8deg)}
+@media(max-width:600px){
+  .manifesto-title{font-size:42px!important}
+  .quote p{font-size:38px}
+}
