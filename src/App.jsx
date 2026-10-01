@@ -113,34 +113,74 @@ function Events() {
 
 function People() {
   const groups = [
-    "Direção",
-    "Assembleia Geral",
-    "Comunicação e Cultura",
-    "Conselho Fiscal",
-    "Pastoral",
-    "Eventos",
-    "Desporto",
-    "Voluntariado e Ambiente",
-    "Os Nossos — Vogais"
+    { name: "Direção", short: "DIREÇÃO" },
+    { name: "Assembleia Geral", short: "ASSEMBLEIA GERAL" },
+    { name: "Comunicação e Cultura", short: "COMUNICAÇÃO & CULTURA" },
+    { name: "Conselho Fiscal", short: "CONSELHO FISCAL" },
+    { name: "Pastoral", short: "PASTORAL" },
+    { name: "Eventos", short: "EVENTOS" },
+    { name: "Desporto", short: "DESPORTO" },
+    { name: "Voluntariado e Ambiente", short: "VOLUNTARIADO & AMBIENTE" },
+    { name: "Os Nossos — Vogais", short: "OS NOSSOS · VOGAIS" }
   ];
 
   const groupedPeople = groups.map(group => ({
-    group,
+    ...group,
     members: people.filter(p => {
       const roleGroup = p.role.split(" · ")[1];
-      if (group === "Os Nossos — Vogais") return roleGroup?.startsWith("11.º") || roleGroup?.startsWith("10.º") || roleGroup?.startsWith("9.º");
-      return roleGroup === group;
+      if (group.name === "Os Nossos — Vogais") {
+        return ["11.º Ano", "10.º Ano", "9.º Ano"].includes(roleGroup);
+      }
+      return roleGroup === group.name;
     })
   }));
 
+  const scrollToGroup = (name) => {
+    document.getElementById(`nucleo-${name}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return <main className="page">
-    <PageHero eyebrow="04 — A EQUIPA" title={<>32 pessoas.<br/><em>Uma só M.</em></>} text="Somos diferentes, mas temos a mesma vontade: tornar a vida escolar mais participada, divertida e nossa."/>
-    <section className="section people-section">
-      {groupedPeople.map(({group, members}) => <div className="people-group" key={group}>
-        <div className="section-label">{group}</div>
-        <div className="people-grid">{members.map((p,i)=><article className="person" key={p.name}><div className="person-photo"><span>{p.initials}</span><small>{String(i+1).padStart(2,"0")}</small></div><div className="person-info"><p>{p.role.split(" · ")[0]}</p><h3>{p.name}</h3><span>{p.text}</span></div></article>)}</div>
-      </div>)}
+    <PageHero eyebrow="04 — A EQUIPA" title={<>32 pessoas.<br/><em>Uma só M.</em></>} text="Uma equipa dividida por núcleos, com funções diferentes e um objetivo comum: fazer acontecer."/>
+    
+    <section className="people-intro section">
+      <div>
+        <div className="section-label">COMO ESTAMOS ORGANIZADOS</div>
+        <h2>Uma equipa.<br/><span>Vários núcleos.</span></h2>
+      </div>
+      <p>Escolhe um núcleo para veres rapidamente quem faz parte dele e qual é a função de cada pessoa.</p>
     </section>
+
+    <section className="people-directory">
+      <div className="people-nav">
+        {groupedPeople.map((group, i) => <button key={group.name} onClick={() => scrollToGroup(group.name)}>
+          <span>{String(i + 1).padStart(2, "0")}</span>{group.short}<b>{group.members.length}</b>
+        </button>)}
+      </div>
+
+      {groupedPeople.map((group, gi) => <section className="people-group" id={`nucleo-${group.name}`} key={group.name}>
+        <div className="people-group-head">
+          <div className="group-title">
+            <span className="group-number">{String(gi + 1).padStart(2, "0")}</span>
+            <div>
+              <small>NÚCLEO</small>
+              <h2>{group.name}</h2>
+            </div>
+          </div>
+          <div className="group-count"><strong>{group.members.length}</strong><span>{group.members.length === 1 ? "pessoa" : "pessoas"}</span></div>
+        </div>
+        <div className="people-grid">
+          {group.members.map((p, i) => <article className="person" key={p.name}>
+            <div className="person-photo"><span>{p.initials}</span><small>{String(i + 1).padStart(2, "0")}</small></div>
+            <div className="person-info">
+              <p>{p.role.split(" · ")[0]}</p>
+              <h3>{p.name}</h3>
+              <span>{p.text}</span>
+            </div>
+          </article>)}
+        </div>
+      </section>)}
+    </section>
+
     <section className="values section"><div className="section-label">O QUE NOS DEFINE</div><div className="values-grid"><Value icon={<Users/>} title="Participação" text="Toda a gente tem uma ideia que merece ser ouvida."/><Value icon={<Trophy/>} title="Ambição" text="Não prometemos pouco. Prometemos trabalhar."/><Value icon={<Heart/>} title="Comunidade" text="Uma escola mais próxima, inclusiva e viva."/><Value icon={<Leaf/>} title="Futuro" text="Pensar hoje na escola que queremos amanhã."/></div></section>
   </main>
 }
