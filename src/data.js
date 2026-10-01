@@ -380,13 +380,10 @@ export const recurringEvents = [
 ];
 
 export const events = [
-  { date: "12", month: "SET", title: "Apresentação da Lista", place: "Colégio Rainha Santa Isabel", text: "Conhece a equipa, as nossas ideias e aquilo que queremos construir." },
-  { date: "19", month: "SET", title: "Sunset M #01", place: "Pátio do CRSI", text: "A primeira edição do nosso sunset mensal: música, convívio e boa energia." },
-  { date: "26", month: "SET", title: "Conferência M #01", place: "Auditório do CRSI", text: "A primeira conferência com um convidado especial." },
-  { date: "03", month: "OUT", title: "Torneio M #01", place: "Espaços desportivos", text: "Competição entre turmas, espírito de equipa e muita vontade de ganhar." },
-  { date: "17", month: "OUT", title: "Sunset M #02", place: "Pátio do CRSI", text: "Mais uma tarde de música e convívio para toda a escola." },
-  { date: "24", month: "OUT", title: "Palestra M #01", place: "Auditório do CRSI", text: "Uma nova conversa sobre um tema escolhido pelos alunos." },
-  { date: "07", month: "NOV", title: "Noite de Talentos", place: "Auditório do CRSI", text: "Música, dança, humor e criatividade num palco aberto a todos." },
-  { date: "21", month: "NOV", title: "Sunset M #03", place: "Pátio do CRSI", text: "A terceira edição do sunset mensal." },
-  { date: "28", month: "NOV", title: "Conferência M #02", place: "Auditório do CRSI", text: "Mais uma conversa com um convidado especial." }
+  { date: "25", month: "NOV", title: "Palestra M #01", place: "Auditório do CRSI", text: "Uma palestra da Associação de Estudantes para trazer novos conhecimentos e perspetivas aos alunos." },
+  { date: "10", month: "DEZ", title: "Palestra M #02", place: "Auditório do CRSI", text: "Uma conversa aberta sobre um tema relevante para a comunidade escolar." },
+  { date: "12", month: "DEZ", title: "Mega Jantar de Natal", place: "Colégio Rainha Santa Isabel", text: "Um grande jantar de Natal organizado pela Associação de Estudantes." },
+  { date: "DEZ", month: "", title: "Sunset M", place: "Pátio do CRSI", text: "Sunset de dezembro da Associação de Estudantes para convívio e angariação de fundos." },
+  { date: "01–05", month: "FEV", title: "Interturmas", place: "Espaços desportivos do CRSI", text: "Uma semana dedicada aos interturmas de futebol, voleibol e basquetebol, de 1 a 5 de fevereiro." },
+  { date: "", month: "ÚLTIMAS SEMANAS", title: "Mini-Torneios", place: "Recreio do CRSI", text: "Mini-torneios de ping pong e matraquilhos em alguns intervalos de 25 minutos nas últimas semanas de cada período." }
 ];
