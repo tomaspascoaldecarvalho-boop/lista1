@@ -69,3 +69,43 @@ body{background:var(--paper)}
 .footer{background:#082e18}.footer .logo img{filter:none}.footer-social a{border-color:#42614c}.copyright{border-color:#42614c}
 @media(max-width:1000px){.recurring-grid,.calendar-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.logo img{width:120px}.logo{width:120px}.recurring-grid,.calendar-grid{grid-template-columns:1fr}.numbers{grid-template-columns:repeat(2,1fr)}}
+
+
+/* Equipa — diretório por núcleos */
+.people-intro{display:grid;grid-template-columns:1.2fr .8fr;gap:10vw;align-items:end;padding-bottom:55px;background:#f5e8c9}
+.people-intro h2{font:600 clamp(44px,5vw,72px)/.92 "Space Grotesk";letter-spacing:-.055em;margin:18px 0 0;color:#12351f}
+.people-intro h2 span{color:#ff4b0b}
+.people-intro>p{font-size:17px;line-height:1.7;color:#6b6a51;max-width:500px;margin:0}
+.people-directory{background:#f5e8c9;padding:0 7vw 100px}
+.people-nav{position:sticky;top:82px;z-index:10;display:flex;gap:8px;overflow-x:auto;padding:14px 0;background:rgba(245,232,201,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(18,53,31,.12);border-bottom:2px solid rgba(18,53,31,.12);scrollbar-width:none}
+.people-nav::-webkit-scrollbar{display:none}
+.people-nav button{flex:0 0 auto;display:flex;align-items:center;gap:8px;padding:10px 13px;border:1px solid rgba(18,53,31,.18);border-radius:100px;background:#f8edd3;font:700 9px "Space Grotesk";letter-spacing:.08em;color:#12351f;transition:.2s}
+.people-nav button:hover{background:#ff4b0b;color:#fff;border-color:#ff4b0b;transform:translateY(-2px)}
+.people-nav button span{opacity:.5}.people-nav button b{background:#f7c52b;color:#12351f;border-radius:100px;padding:3px 6px;font-size:8px}
+.people-group{scroll-margin-top:145px;padding:72px 0 25px}
+.people-group+.people-group{border-top:2px solid rgba(18,53,31,.12)}
+.people-group-head{display:flex;align-items:flex-end;justify-content:space-between;gap:25px;margin-bottom:28px}
+.group-title{display:flex;align-items:center;gap:18px}
+.group-number{width:52px;height:52px;display:grid;place-items:center;border-radius:50%;background:#ff4b0b;color:#fff;font:700 12px "Space Grotesk"}
+.group-title small{font:700 9px "Space Grotesk";letter-spacing:.18em;color:#8a3b12}
+.group-title h2{font:600 clamp(31px,4vw,52px)/.95 "Space Grotesk";letter-spacing:-.05em;margin:5px 0 0;color:#12351f}
+.group-count{display:flex;align-items:baseline;gap:8px;color:#6b6a51}
+.group-count strong{font:700 30px "Space Grotesk";color:#12351f}
+.group-count span{font-size:11px;text-transform:uppercase;letter-spacing:.12em}
+.people-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.person{display:grid;grid-template-columns:105px 1fr;min-height:145px;background:#f8edd3;border:2px solid rgba(18,53,31,.12);transition:.25s;overflow:hidden}
+.person:hover{transform:translateY(-5px);border-color:#ff4b0b;box-shadow:0 15px 30px rgba(18,53,31,.1)}
+.person-photo{aspect-ratio:1/1;background:#0b5a2a!important;border:0!important;min-height:105px}
+.person:nth-child(3n) .person-photo{background:#63258f!important}
+.person:nth-child(2n) .person-photo{background:#ff4b0b!important}
+.person-photo:after{width:72%;border-color:rgba(247,197,43,.7)}
+.person-photo span{font-size:38px}
+.person-photo small{top:9px;left:9px}
+.person-info{padding:15px 14px;display:flex;flex-direction:column;justify-content:center}
+.person-info p{display:inline-block;width:max-content;max-width:100%;padding:5px 8px;margin:0 0 7px;border-radius:100px;background:#f7c52b;color:#12351f!important;font-size:7px!important;letter-spacing:.1em}
+.person-info h3{font-size:19px;margin:0 0 5px;line-height:1.05}
+.person-info>span{font-size:11px;line-height:1.4;color:#6b6a51}
+.people-group:nth-of-type(odd) .group-number{background:#63258f}
+.people-group:nth-of-type(even) .group-number{background:#ff4b0b}
+@media(max-width:1000px){.people-intro{grid-template-columns:1fr;gap:25px}.people-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.people-intro{padding-bottom:40px}.people-directory{padding:0 6vw 70px}.people-nav{top:70px;margin:0 -6vw;padding-left:6vw;padding-right:6vw}.people-group{scroll-margin-top:130px;padding:55px 0 15px}.people-group-head{align-items:flex-start}.group-title{gap:12px}.group-number{width:42px;height:42px}.group-count{display:none}.people-grid{grid-template-columns:1fr}.person{grid-template-columns:90px 1fr;min-height:125px}.person-photo{min-height:90px}.person-info h3{font-size:18px}.person-info>span{font-size:10px}}
