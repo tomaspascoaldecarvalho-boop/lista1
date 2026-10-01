@@ -41,7 +41,7 @@ function App() {
       {page === "home" && <Home go={go} />}
       {page === "eventos" && <Events />}
       {page === "lista" && <People />}
-      {page === "projetos" && <Projects filter={filter} setFilter={setFilter} filtered={filtered} />}
+      {page === "projetos" && <Projects />}
       {page === "manifesto" && <Manifesto go={go} />}
 
       <footer className="footer">
@@ -185,11 +185,40 @@ function People() {
   </main>
 }
 
-function Projects({filter,setFilter,filtered}) {
-  const cats=["Todos","Escola","Eventos","Desporto","Cultura","Comunidade","Ambiente"];
+function Projects() {
+  const groups = ["Comunicação e Cultura", "Eventos", "Voluntariado e Ambiente", "Pastoral", "Desporto"];
+  const icons = {
+    "Comunicação e Cultura": "✦",
+    "Eventos": "◉",
+    "Voluntariado e Ambiente": "♥",
+    "Pastoral": "☼",
+    "Desporto": "⚡"
+  };
+  const scrollToGroup = (index) => {
+    document.getElementById(`projeto-${index}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
   return <main className="page">
-    <PageHero eyebrow="05 — PROJETOS" title={<>Ideias com<br/><em>um propósito.</em></>} text="Não queremos apresentar promessas vagas. Queremos mostrar propostas concretas para o Colégio Rainha Santa Isabel."/>
-    <section className="section projects-section"><div className="filters">{cats.map(c=><button className={filter===c?"selected":""} onClick={()=>setFilter(c)} key={c}>{c}</button>)}</div><div className="all-projects">{filtered.map((p,i)=><ProjectCard p={p} index={i} key={p.title}/>)}</div></section>
+    <PageHero eyebrow="05 — PROJETOS" title={<>Ideias com<br/><em>um propósito.</em></>} text="As nossas propostas estão organizadas por núcleos — para veres claramente o que queremos fazer e onde cada ideia se enquadra."/>
+    <section className="projects-directory">
+      <div className="project-nav">
+        {groups.map((group, i) => <button key={group} onClick={() => scrollToGroup(i)}>
+          <span>{String(i + 1).padStart(2, "0")}</span>{group}<b>{projects.filter(p => p.category === group).length}</b>
+        </button>)}
+      </div>
+      {groups.map((group, gi) => {
+        const items = projects.filter(p => p.category === group);
+        return <section className="project-group" id={`projeto-${gi}`} key={group}>
+          <div className="project-group-head">
+            <div className="project-group-title">
+              <span className="project-group-icon">{icons[group]}</span>
+              <div><small>NÚCLEO</small><h2>{group}</h2></div>
+            </div>
+            <span className="project-group-count">{items.length} propostas</span>
+          </div>
+          <div className="all-projects">{items.map((p, i) => <ProjectCard p={p} index={i} key={p.title}/>)}</div>
+        </section>;
+      })}
+    </section>
   </main>
 }
 
@@ -204,7 +233,7 @@ function PageHero({eyebrow,title,text}) {
  return <section className="page-hero"><div className="page-hero-pattern">M</div><div className="page-hero-inner"><p className="eyebrow"><span/> {eyebrow}</p><h1>{title}</h1><p>{text}</p></div></section>
 }
 function ProjectCard({p,index}) {
- return <article className="project-card"><div className="project-number">0{index+1}</div><div className="project-icon">{p.icon}</div><div className="project-content"><div className="project-meta"><span>{p.category}</span><small>{p.tag}</small></div><h3>{p.title}</h3><p>{p.description}</p><button className="circle-btn"><ArrowRight size={17}/></button></div></article>
+ return <article className="project-card"><div className="project-number">0{index+1}</div><div className="project-icon">{p.icon}</div><div className="project-content"><div className="project-meta"><span>{p.category}</span><small>{p.tag}</small></div><h3>{p.title}</h3><p>{p.description}</p></div></article>
 }
 function Value({icon,title,text}) {
  return <article className="value"><div>{icon}</div><h3>{title}</h3><p>{text}</p></article>
