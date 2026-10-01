@@ -96,7 +96,7 @@ function Home({go}) {
       <div className="project-grid">{projects.slice(0,6).map((p,i)=><ProjectCard key={p.title} p={p} index={i}/>)}</div>
     </section>
 
-    <section className="quote"><div className="quote-mark">“</div><p>A escola é de todos.<br/><em>Vamos fazê-la acontecer juntos.</em></p><span>— LISTA MADAGASCAR</span></section>
+    <section className="quote"><div className="quote-mark">“</div><p>O nosso tempo.<br/><em>A nossa escola. A nossa marca.</em></p><span>— LISTA MADAGASCAR</span></section>
 
     <section className="cta section"><div><p className="eyebrow">FAZ PARTE</p><h2>Prontos para<br/><span>começar?</span></h2></div><button className="primary" onClick={() => go("eventos")}>Ver próximos eventos <ArrowRight size={18}/></button></section>
   </main>
@@ -225,7 +225,7 @@ function Projects() {
 function Manifesto({go}) {
   return <main className="page">
     <PageHero eyebrow="06 — MANIFESTO" title={<>A escola que<br/><em>queremos.</em></>} text="Madagascar é mais do que um nome. É a nossa forma de olhar para a escola: com coragem, criatividade e espírito de equipa."/>
-    <section className="manifesto section"><div className="manifesto-number">M</div><div className="manifesto-copy"><p className="eyebrow">O NOSSO MANIFESTO</p><h2>Uma escola não é só aquilo que acontece nas aulas.</h2><p>É o intervalo, o torneio, o espetáculo, a conversa no corredor, a ideia que alguém teve e a oportunidade de a concretizar.</p><p>É por isso que queremos uma escola onde participar seja fácil, onde as atividades tenham espaço e onde os alunos sintam que também podem construir o dia a dia do CRSI.</p><div className="manifesto-lines"><div><b>01</b><span>Ouvir antes de decidir.</span></div><div><b>02</b><span>Fazer mais, prometer menos.</span></div><div><b>03</b><span>Criar momentos para todos.</span></div><div><b>04</b><span>Deixar uma escola melhor.</span></div></div><button className="primary" onClick={()=>go("projetos")}>Ver os nossos projetos <ArrowRight size={18}/></button></div></section>
+    <section className="manifesto section"><div className="manifesto-number">M</div><div className="manifesto-copy"><p className="eyebrow">O NOSSO MANIFESTO</p><h2>O nosso tempo. A nossa escola. A nossa marca.</h2><p>Este é o nosso tempo de participar, de criar e de fazer acontecer. Queremos aproveitar estes anos para tornar a escola mais viva, mais próxima e mais nossa.</p><p>Não queremos apenas passar pelo CRSI. Queremos deixar uma marca através das ideias que concretizamos, dos momentos que criamos e da diferença que fazemos no dia a dia.</p><div className="manifesto-lines"><div><b>01</b><span>Ouvir quem vive a escola.</span></div><div><b>02</b><span>Transformar ideias em ação.</span></div><div><b>03</b><span>Criar momentos que ficam.</span></div><div><b>04</b><span>Deixar a nossa marca.</span></div></div><button className="primary" onClick={()=>go("projetos")}>Ver os nossos projetos <ArrowRight size={18}/></button></div></section>
   </main>
 }
 
