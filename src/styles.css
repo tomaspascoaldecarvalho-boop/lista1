@@ -130,3 +130,8 @@ body{background:var(--paper)}
 .project-group .project-card{min-height:250px}
 @media(max-width:1000px){.project-group .all-projects{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.projects-directory{padding:0 6vw 70px}.project-nav{top:70px;margin:0 -6vw;padding-left:6vw;padding-right:6vw}.project-group{scroll-margin-top:130px}.project-group .all-projects{grid-template-columns:1fr}.project-group-head{align-items:flex-start}.project-group-count{display:none}}
+
+/* Fotos dos membros ocupam toda a área superior do cartão */
+.person-photo{aspect-ratio:auto;height:100%;min-height:230px}
+.person{display:flex;flex-direction:column;height:100%}
+.person-photo{flex:1}
